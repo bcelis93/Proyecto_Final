@@ -1,0 +1,11 @@
+{% extends "blog/padre.html" %}
+
+{% block contenidoUno %}
+<br>
+<br>
+<h3>Detalle del Libro</h3>
+<p>Nombre del libro: <i>{{ libro.titulo }} </i> </p>
+<p>Género: <i> {{ libro.genero }}</i></p>
+<p>Sinopsis: <i> {{ libro.sinopsis }}</i></p>
+<a href="{% url 'libro-lista' %}">Volver a lista</a>
+{% endblock %}

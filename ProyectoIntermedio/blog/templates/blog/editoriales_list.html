@@ -1,0 +1,33 @@
+{% extends "blog/padre.html" %}
+{% block contenidoUno %}
+<br>
+<br>
+<div>
+<h1>Editoriales </h1>
+<ul>
+{% if object_list %}
+    {% for editorial in object_list %}
+    
+    <li>
+        <p>Nombre: {{ editorial.nombre }}</p>
+        <a href="{% url 'EditorialDetail' editorial.id %}">Ver editorial</a>
+        <a href="{% url 'EditorialUpdate' editorial.id %}">Editar</a>
+        <a href="{% url 'EditorialDelete' editorial.id %}">Borrar</a>
+        <a href="{% url 'EditorialNew' %}">Agregar</a>
+        
+        </p>
+        
+        </p>
+        
+    </li>
+    {% endfor %}
+</ul>
+</div>
+{% else %}
+<br>
+<h3>No hay editoriales aún! Sé el primero en agregar:
+<br>
+<a href="{% url 'EditorialNew' %}">Agregar</a>
+</h3>
+{% endif %}
+{% endblock %}

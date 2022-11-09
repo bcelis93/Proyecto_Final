@@ -1,0 +1,14 @@
+{% extends "blog/madre.html" %}
+
+{% load static %}
+
+{% block contenidoUno %}
+<br>
+<br>
+
+<form action="/blog/buscar-editorial" method="GET">
+    <body style="background-color: rgb(212, 208, 208);"></body>
+    <p><input type="text" name="nombre" id="nombre"></p>
+    <input type="submit" value="Ir a buscar!">
+</form>
+{% endblock %}

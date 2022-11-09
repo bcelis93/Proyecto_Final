@@ -1,0 +1,26 @@
+{% extends "blog/padre.html" %}
+
+{% block contenidoUno %}
+<p> En esta sección nos encotraremos con un listado de todos los blogs </p>
+<b>Autores </b>
+<br>
+<i>Aquí veremos a el nombre, apellido y biografía de los mismos</i>
+
+<br>
+
+<a href="{% url 'autor-lista' %}">Autores</a>
+<br>
+<br>
+<b>Libros</b>
+<br>
+<i>Aquí veremos a el nombre, género y sinopsis </i>
+<br>
+<a href="{% url 'libro-lista' %}">Libros</a>
+<br>
+<br>
+<b>Editoriales</b>
+<br>
+<i>Aquí nos encontraremos con el nombre y la hisotria de las edioriales </i>
+<br>
+<a href="{% url 'editorial-lista' %}">Editoriales</a>
+{% endblock %}

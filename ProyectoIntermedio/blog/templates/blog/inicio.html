@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="{% static 'blog/style.css' %}" rel="stylesheet" />
+    <title>Proyecto Final</title>
+
+</head>
+<body>
+
+    <div class="head">
+
+        <div class="logo">
+            <a href="{% url 'Inicio' %}">CoderHouse</a>
+        </div>
+
+        <nav class="navbar">
+            <a href="{% url 'autor-lista' %}">Autores</a>
+            <a href="{% url 'libro-lista' %}">Libros</a>
+            <a href="{% url 'editorial-lista' %}">Editoriales</a>
+            
+            {% if not request.user.is_authenticated %}
+            <a href="{% url 'Login' %}">Login</a>
+            <a href="{% url 'Register' %}">Registrarse</a>
+            {% endif %}
+
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'Logout' %}">Logout</a>
+            <a href="{% url 'usuario' %}">Perfil</a>
+            {% endif %}
+            
+        </nav>
+
+    </div>
+
+    <header class="content header">
+        <h2 class="title">Inicio</h2>
+        <p>
+            En este proyecto final de CoderHouser hemos decidido hacer un blog
+            sobre autores, libros y editoriales en donde se podrán ver, agregar y
+            editar los mismos.
+        </p>
+
+       
+    </header>
+
+    <section class="content sau">
+        
+        <br>
+        <br>
+        <br>
+        
+        <h2 class="title">Búsqueda</h2>
+        <p>En esta sección se podrá buscar autores, libros y/o editoriales.</p>
+        
+        <div class="box-container">
+
+            <div class="box">
+                <i class="fab fa-angular"></i>
+                <a href="{% url 'busqueda' %}"><h3>Autores</h3></a>
+                <p>Busca aquí los autores agregados</p>
+            </div>
+            <div class="box">
+                <i class="fab fa-apple"></i>
+                <a href="{% url 'busqueda_libro' %}"><h3>Libros</h3></a>
+                <p>Busca aquí los libros agregados</p>
+            </div>
+            <div class="box">
+                <i class="fab fa-android"></i>
+                <a href="{% url 'busqueda_editorial' %}"><h3>Editoriales</h3></a>
+                <p>Busca aquí las editoriales agregadas</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="content about">
+
+        <h2 class="title">Nosotros</h2>
+        <p> Este grupo está conformado por Camila Bermejo y Brian Celis
+        </p>
+
+        <a href="{% url 'Nosotros' %}" class="btn">Más sobre nosotros</a>
+
+    </section>
+
+    <section class="content price">
+
+        <article class="contain">
+            <h2 class="title">¡Muchas Gracias!</h2>
+            <a href="{% url 'listas' %}" class="btn">Todos lo blogs!</a>
+            <p>
+            </p>
+
+            
+
+        </article>
+
+    </section>
+
+  
+</body>
+</html>

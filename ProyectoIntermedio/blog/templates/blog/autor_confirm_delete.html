@@ -1,0 +1,12 @@
+{% extends "blog/padre.html" %}
+{% block contenidoUno %}
+<br>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+    ¿ Estás seguro de borrar el autor: <strong>{{ autor.nombre }} ({{ autor.apellido }})</strong> ?
+    <br><br>
+    <input type="submit" value="Borrar">
+    <a href="{% url 'autor-lista' %}">Volver a lista</a>
+</form>
+{% endblock %}

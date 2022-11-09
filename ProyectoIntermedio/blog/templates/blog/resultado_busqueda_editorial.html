@@ -1,0 +1,27 @@
+{% extends "blog/madre.html" %}
+
+{% load static %}
+
+{% block contenidoUno %}
+<br>
+<br>
+<p>Estamos buscando la editorial: {{ nombre }}</p>
+
+{% if editoriales_encontrados %}
+
+<ul>
+{% for editorial in editoriales_encontrados %}
+    <li>{{editorial.nombre}}</li>
+    <br>
+    <li>{{editorial.historia}}</li>
+    
+{% endfor %}
+</ul>
+
+{% endif %}
+
+{% if not editoriales_encontrado %}
+<br>
+No se encontró la editorial buscada :(
+{% endif %}
+{% endblock %}

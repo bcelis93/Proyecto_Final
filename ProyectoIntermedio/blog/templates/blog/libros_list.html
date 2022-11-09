@@ -1,0 +1,31 @@
+{% extends "blog/padre.html" %}
+{% block contenidoUno %}
+<br>
+<br>
+<div>
+<h1>Libros </h1>
+<ul>
+{% if object_list %}
+    {% for libro in object_list %}
+    
+    <li>
+        <p>Título: {{ libro.titulo }}</p>
+        <a href="{% url 'LibroDetail' libro.id %}">Ver libro</a>
+        <a href="{% url 'LibroUpdate' libro.id %}">Editar</a>
+        <a href="{% url 'LibroDelete' libro.id %}">Borrar</a>
+        <a href="{% url 'LibroNew' %}">Agregar</a>
+        
+        </p>
+        
+    </li>
+    {% endfor %}
+</ul>
+</div>
+{% else %}
+<br>
+<h3>No hay libros aún! Sé el primero en agregar:
+<br>
+<a href="{% url 'LibroNew' %}">Agregar</a>
+</h3>
+{% endif %}
+{% endblock %}

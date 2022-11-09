@@ -1,0 +1,10 @@
+{% extends "blog/padre.html" %}
+
+{% block contenidoUno %}
+<br>
+<br>
+<h3>Detalle de la Editorial</h3>
+<p>Nombre de la editorial: <i>{{ editorial.nombre }} </i> </p>
+<p>Historia: <i> {{ editorial.historia }}</i></p>
+<a href="{% url 'editorial-lista' %}">Volver a lista</a>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "blog/padre.html" %}
+{% block contenidoUno %}
+
+<div>
+	
+<br>
+<br>
+<h1>Autores: </h1>
+<ul>
+{% if object_list %}
+
+    
+    {% for autor in object_list %}
+    
+    <li>
+        <p>Nombre: {{ autor.nombre }} {{ autor.apellido }} </p>
+                <a href="{% url 'AutorDetail' autor.id %}">Ver autor</a>
+                <a href="{% url 'AutorUpdate' autor.id %}">Editar</a>
+                <a href="{% url 'AutorDelete' autor.id %}">Borrar</a>
+                <a href="{% url 'AutorNew' %}">Agregar</a>
+                
+        </p>
+        
+    </li>
+    {% endfor %}
+</ul>
+
+</div>
+{% else %}
+<br>
+<h3>No hay autores aún! Sé el primero en agregar:
+<br>
+<a href="{% url 'AutorNew' %}">Agregar</a>
+</h3>
+{% endif %}
+{% endblock %}

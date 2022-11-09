@@ -1,0 +1,25 @@
+{% extends "blog/madre.html" %}
+
+{% load static %}
+
+{% block contenidoUno %}
+<br>
+<br>
+<p>Estamos buscando el libro: {{ titulo }}</p>
+
+{% if libros_encontrados %}
+
+<ul>
+{% for libro in libros_encontrados %}
+    <li>{{libro.titulo}} ( {{libro.genero}})</li>
+    
+    <li>{{libro.sinopsis}}</li>
+{% endfor %}
+</ul>
+
+{% endif %}
+{% if not libros_encontrado %}
+<br>
+No se encontró el libro buscado :(
+{% endif %}
+{% endblock %}

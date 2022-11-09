@@ -1,0 +1,25 @@
+{% extends "blog/madre.html" %}
+
+{% load static %}
+
+{% block contenidoUno %}
+<br>
+<br>
+<p>Estamos buscando al autor: {{ nombre }}</p>
+
+{% if autores_encontrados %}
+
+<ul>
+{% for autor in autores_encontrados %}
+    <li>{{autor.nombre}} ( {{autor.apellido}})</li>
+    <li>{{autor.biografia}}</li>
+{% endfor %}
+{% endif %}
+</ul>
+
+ 
+    {% if not autores_encontrado %}
+  <br>
+    No se encontró el autor buscado :(
+    {% endif %}
+{% endblock %}

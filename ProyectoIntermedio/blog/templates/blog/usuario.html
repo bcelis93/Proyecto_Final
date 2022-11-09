@@ -1,0 +1,22 @@
+{% extends "blog/padreusuario.html" %}
+{% block contenidoUno %}
+<br>
+<br>
+<nav class="navbar">
+    <br>
+    <br>
+    {% if avatar %}
+        <img height="80px" src="{{ avatar }}"/>
+    {% endif %}
+</nav>
+<br>
+<p> Hola, {{ user.username }} !!</p>
+<h2>Bienvenido/a a mi proyecto!</h2>
+<p><a href="{% url 'AgregarAvatar' %}">Editar avatar</a></p>
+<p><a href="{% url 'EditarPerfil' %}">Editar perfil</a></p>
+
+{% if mensaje %}
+{{ mensaje }}
+{% endif %}
+
+{% endblock %}
